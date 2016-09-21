@@ -4,7 +4,6 @@ var conflict = require('gulp-conflict')
 var rename = require('gulp-rename')
 var template = require('gulp-template')
 var inquirer = require('inquirer')
-var cookingConfig = require('cooking-config')
 
 gulp.task('default', function (done) {
   inquirer.prompt([
@@ -27,21 +26,12 @@ gulp.task('default', function (done) {
       default: ''
     },
     {
-      type: 'input',
-      name: 'github',
-      message: 'Git 仓库地址：',
-      default: cookingConfig.github
-    },
-    {
       type: 'confirm',
       name: 'moveon',
       message: 'Continue?'
     }
   ],
   function (answers) {
-    if (answers.github) {
-      answers.github = answers.github.replace(/\.git$/, '')
-    }
     if (!answers.moveon) {
       return done()
     }
