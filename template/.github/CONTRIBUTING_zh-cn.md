@@ -2,7 +2,7 @@
 
 Hi! 首先感谢你使用 <%= name %>。
 
-<%= description %>
+<%= descriptionCn %>
 
 <%= name %> 的成长离不开大家的支持，如果你愿意为 <%= name %> 贡献代码或提供建议，请阅读以下内容。
 

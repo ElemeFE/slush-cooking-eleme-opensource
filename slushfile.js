@@ -11,19 +11,25 @@ gulp.task('default', function (done) {
     {
       type: 'input',
       name: 'name',
-      message: 'Give your app a name',
+      message: '项目名称：',
       default: getNameProposal()
     },
     {
       type: 'input',
-      name: 'description',
-      message: 'Give your app a description',
-      default: 'A project.'
+      name: 'descriptionCn',
+      message: '项目描述（中文）：',
+      default: ''
+    },
+    {
+      type: 'input',
+      name: 'descriptionEn',
+      message: '项目描述（英文，不填则不生成英文版指南）：',
+      default: ''
     },
     {
       type: 'input',
       name: 'github',
-      message: 'git repository address (use HTTPS instead of SSH)',
+      message: 'Git 仓库地址：',
       default: cookingConfig.github
     },
     {
@@ -34,12 +40,17 @@ gulp.task('default', function (done) {
   ],
   function (answers) {
     if (answers.github) {
-      answers.github = answers.github.replace(/\.git$/, '');
+      answers.github = answers.github.replace(/\.git$/, '')
     }
     if (!answers.moveon) {
       return done()
     }
-    gulp.src(__dirname + '/template/**')
+    var filesPath = [__dirname + '/template/**']
+    if (!answers.descriptionEn) {
+      filesPath = filesPath.concat(`!${ __dirname }/template/.github/CONTRIBUTING_en-us.md`)
+    }
+    
+    gulp.src(filesPath, { dot: true })
       .pipe(template(answers))
       .pipe(rename(function (file) {
         if (file.basename[0] === '_') {

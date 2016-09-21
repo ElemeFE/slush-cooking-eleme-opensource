@@ -1,8 +1,8 @@
 # <%= name %> Contributing Guide
 
-Hi! Thank you for choosing <%= name %>。
+Hi! Thank you for choosing <%= name %>.
 
-<%= description %>
+<%= descriptionEn %>
 
 We are excited that you are interested in contributing to <%= name %>. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
