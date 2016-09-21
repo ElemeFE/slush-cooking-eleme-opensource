@@ -3,5 +3,5 @@
 
 ## Quick Start
 ```shell
-cooking init slush-cooking-eleme-opensource
+cooking init eleme-opensource
 ```
