@@ -1,0 +1,24 @@
+{
+  "name": "slush-cooking-eleme-opensource",
+  "version": "0.0.2",
+  "description": "An open source contributing guide template",
+  "keywords": [
+    "slush-cooking-eleme-opensource",
+    "cooking",
+    "slushgenerator"
+  ],
+  "scripts": {
+    "dev": "cooking watch",
+    "dist": "cooking build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:cookingjs/slush-cooking-eleme-opensource.git"
+  },
+  "homepage": "git@github.com:cookingjs/slush-cooking-eleme-opensource.git",
+  "bugs": {
+    "url": "git@github.com:cookingjs/slush-cooking-eleme-opensource.git"
+  },
+  "author": "yi.shyang@ele.me",
+  "license": "MIT"
+}
